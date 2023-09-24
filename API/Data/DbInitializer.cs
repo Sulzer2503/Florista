@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using API.Entities;
 
 namespace API.Data
@@ -19,8 +16,8 @@ namespace API.Data
                     Name = "Rose",
                     Description = "Some description...",
                     Article = "ASD123",
-                    PictureUrl = "/images/products/rose",
                     Price = 20000,
+                    PictureUrl = "/images/products/rose.png",
                     Color = "red",
                     Category = "flowers",
                     QuantityInStock = 100,
@@ -31,8 +28,8 @@ namespace API.Data
                     Name = "Carnation",
                     Description = "Some description...",
                     Article = "ASD321",
-                    PictureUrl = "/images/products/carnation",
                     Price = 10000,
+                    PictureUrl = "/images/products/carnation.png",
                     Color = "pink",
                     Category = "flowers",
                     QuantityInStock = 150,
@@ -43,8 +40,8 @@ namespace API.Data
                     Name = "Yellow Bouquet",
                     Description = "Some description...",
                     Article = "BSD123",
-                    PictureUrl = "/images/products/yellow_bouquet",
                     Price = 25000,
+                    PictureUrl = "/images/products/yellow_bouquet.png",
                     Color = "yellow",
                     Category = "bouquets",
                     QuantityInStock = 20,
@@ -55,8 +52,8 @@ namespace API.Data
                     Name = "Pink Bouquet",
                     Description = "Some description...",
                     Article = "BSD126",
-                    PictureUrl = "/images/products/pink_bouquet",
                     Price = 25000,
+                    PictureUrl = "/images/products/pink_bouquet.png",
                     Color = "pink",
                     Category = "bouquets",
                     QuantityInStock = 15,
@@ -67,8 +64,8 @@ namespace API.Data
                     Name = "Hyacinth",
                     Description = "Some description...",
                     Article = "ADF445",
-                    PictureUrl = "/images/products/hyacinth",
                     Price = 18000,
+                    PictureUrl = "/images/products/hyacinth.png",
                     Color = "violet",
                     Category = "flowers",
                     QuantityInStock = 80,
@@ -79,8 +76,8 @@ namespace API.Data
                     Name = "Peony",
                     Description = "Some description...",
                     Article = "DDF564",
-                    PictureUrl = "/images/products/peony_pink",
                     Price = 22000,
+                    PictureUrl = "/images/products/peony_pink.png",
                     Color = "pink",
                     Category = "flowers",
                     QuantityInStock = 75,
@@ -91,8 +88,8 @@ namespace API.Data
                     Name = "Hydrangea",
                     Description = "Some description...",
                     Article = "GGH557",
-                    PictureUrl = "/images/products/hydrangea",
                     Price = 23000,
+                    PictureUrl = "/images/products/hydrangea.png",
                     Color = "white",
                     Category = "flowers",
                     QuantityInStock = 65,
@@ -103,8 +100,8 @@ namespace API.Data
                     Name = "Iris",
                     Description = "Some description...",
                     Article = "SSD453",
-                    PictureUrl = "/images/products/iris",
                     Price = 24000,
+                    PictureUrl = "/images/products/iris.png",
                     Color = "violet",
                     Category = "flowers",
                     QuantityInStock = 45,
