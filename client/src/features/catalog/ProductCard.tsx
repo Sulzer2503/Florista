@@ -11,16 +11,13 @@ export default function ProductCard({ product }: Props) {
         <Card style={{borderRadius: 15}}>
             <CardActionArea component={Link} to={`/catalog/${product.id}`}>
                 <CardMedia
-                    sx={{ height: 140, backgroundSize: 'crop' }}
+                    sx={{ height: 200, backgroundSize: 'crop' }}
                     image={product.pictureUrl}
                     title={product.name}
                 />
                 <CardContent sx={{backgroundColor: '#ce93d8'}}>
                     <Typography gutterBottom color="primary" variant="h6" textAlign={"center"}>
                         {product.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" fontStyle="italic" textAlign={'center'}>
-                        {product.description}
                     </Typography>
                     <Typography variant="h6" textAlign={'center'}>
                         €{(product.price / 100).toFixed(2)}

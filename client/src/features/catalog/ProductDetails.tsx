@@ -1,8 +1,11 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Product } from "../../app/models/product";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import GiftCardText from "../order/GiftCardText";
+import agent from "../../app/api/agent";
+import NotFound from "../../app/errors/NotFound";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 
 export default function ProductDetailsPage() {
@@ -12,20 +15,21 @@ export default function ProductDetailsPage() {
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/api/products/${id}`)
-            .then(response=>setProduct(response.data))
+        id && agent.Catalog.details(parseInt(id))
+            .then(response=>setProduct(response))
             .catch(error => console.log(error))
             .finally(() => setLoading(false))
     }, [id])
 
-    if(loading) return <h3>Loading...</h3>
-    if(!product) return <h3>Not found!</h3>
+    if(loading) return <LoadingComponent message="Loading product..."/>
+    if(!product) return <NotFound/>
 
+    
     return (
         <Typography variant="h2">
             <Grid container spacing={6}>
                 <Grid item xs={6}>
-                    <img src={product.pictureUrl} alt={product.name} style={{width: '100%'}}/>
+                    <img src={product.pictureUrl} alt={product.name} style={{width: '100%', borderRadius: 15}}/>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography variant="h3">{product.name}</Typography>
@@ -51,8 +55,15 @@ export default function ProductDetailsPage() {
                                     <TableCell>{product.category}</TableCell>
                                 </TableRow>
                                 <TableRow>
-                                    <TableCell>In Stock</TableCell>
-                                    <TableCell>{product.quantityInStock} pcs</TableCell>
+                                    {
+                                    product.quantityInStock === 0 ? <TableCell>Not in Stock</TableCell> : <TableCell>In Stock</TableCell>
+                                    }
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <GiftCardText/>
+                                    </TableCell>
+                                    <TableCell></TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
