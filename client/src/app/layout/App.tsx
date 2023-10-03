@@ -31,6 +31,7 @@ function App() {
       <Header darkMode={darkMode} handleThemeMode={handleThemeMode}/>
       <Container>
         <Outlet/>
+        <Outlet/>
       </Container>
     </ThemeProvider>
   );
